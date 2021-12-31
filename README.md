@@ -8,7 +8,7 @@
 
 ```
 
-flutter pub add wechat
+flutter pub add flutter_plugin_wechat_chenyu
     
 替换 WeChat_APP_ID  
          
