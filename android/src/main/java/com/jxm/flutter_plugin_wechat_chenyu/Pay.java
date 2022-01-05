@@ -15,7 +15,7 @@ public class Pay {
     this.api = api;
   }
 
-  public void sendPaymentRequest(JSONObject json,String appId) throws RuntimeException {
+  public void sendPaymentRequest(JSONObject json,String appId) throws RuntimeException, JSONException {
     PayReq req = new PayReq();
     req.appId = appId;  // appId
     req.partnerId = json.getString("partnerId");
