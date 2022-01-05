@@ -60,8 +60,8 @@ public class FlutterPluginWechatChenyuPlugin implements FlutterPlugin, ActivityA
 
     @Override
     public void onMethodCall(@NonNull MethodCall call, @NonNull Result result) {
-        isWXAppInstalled(result);
         try {
+            isWXAppInstalled();
             if (call.method.equals("getPlatformVersion")) {
                 result.success("Android " + android.os.Build.VERSION.RELEASE);
                 return;
@@ -101,9 +101,8 @@ public class FlutterPluginWechatChenyuPlugin implements FlutterPlugin, ActivityA
     }
 
 
-    private void isWXAppInstalled(@NonNull Result result)  {
+    private void isWXAppInstalled()  {
         if (!api.isWXAppInstalled()) {
-            result.error("500", Constants.Error500, Constants.Error500);
             throw new RuntimeException(Constants.Error500);
         }
     }
