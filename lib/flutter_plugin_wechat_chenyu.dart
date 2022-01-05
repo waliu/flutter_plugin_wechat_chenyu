@@ -21,14 +21,14 @@ class FlutterPluginWechatChenyu {
   }
 
   /// 登录
-  /// @param ShareOption
+  /// @param AuthOption
   /// @version 1.0.0
   static Future<dynamic> auth(AuthOption authOption) async {
     return await _channel.invokeMethod('auth', jsonEncode(authOption.toJson()));
   }
 
   /// 支付
-  /// @param ShareOption
+  /// @param PaymentRequestOption
   /// @version 1.0.0
   static Future<dynamic> sendPaymentRequest(
       PaymentRequestOption paymentRequestOption) async {
